@@ -1,4 +1,3 @@
-var toTop = document.querySelector('.to-top');
 var iconMenu = document.querySelector('.hamburger');
 var menu = document.querySelector('.nav');
 
@@ -8,19 +7,21 @@ iconMenu.addEventListener('click', function(event) {
   menu.classList.toggle('nav--show');
 })
 
+var toTop = $('.to-top');
+
 $(document).ready(function () {
-  var offset = 1420;
+  var offset = 400;
   var duration = 500;
 
   $(window).scroll(function () {
       if ($(this).scrollTop() > offset) {
-          $('.to-top').fadeIn();
+          toTop.fadeIn();
       } else {
-          $('.to-top').fadeOut();
+          toTop.fadeOut();
       }
   });
 
-  $('.to-top').click(function (event) {
+  toTop.click(function (event) {
     event.preventDefault();
     $("html, body").animate({
         scrollTop: 0
@@ -30,14 +31,28 @@ $(document).ready(function () {
 });
 
 
-
-
-// SLIDER
-
-$("#Glide").glide({
-  type: "slider"
+$('.slick').slick({
+  // dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
 });
-
 
 // Yandex map
 ymaps.ready(init);
