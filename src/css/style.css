@@ -451,7 +451,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 470px; }
+  max-width: 470px;
+  padding: 10px 0; }
 
 .logo__text {
   padding-left: 20px;
@@ -478,7 +479,7 @@ body {
 .nav__link {
   position: relative;
   display: block;
-  padding: 28px 0;
+  padding: 30px 0;
   margin: 0 15px;
   text-transform: uppercase;
   text-decoration: none;
@@ -503,7 +504,9 @@ body {
   position: relative;
   padding: 10px 0 10px 25px;
   font-family: "Roboto Slab", serif;
-  font-size: 24px; }
+  font-size: 24px;
+  text-decoration: none;
+  color: #000; }
   .callback__phone span {
     color: #b0b0b0; }
   .callback__phone::after {
@@ -809,8 +812,10 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   -webkit-box-shadow: inset 0px -5px 20px 0px rgba(0, 0, 0, 0.2);
           box-shadow: inset 0px -5px 20px 0px rgba(0, 0, 0, 0.2); }
-  .promo-desc span {
-    color: #c6a239; }
+
+.phone {
+  text-decoration: none;
+  color: #c6a239; }
 
 .promo-desc__title,
 .promo-desc__subtitle {
@@ -903,9 +908,6 @@ body {
 
 .features__header {
   position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
   max-width: 330px;
   margin: 0;
   font-size: 24px;
@@ -1153,12 +1155,14 @@ body {
   text-align: center; }
 
 .slick {
-  max-width: 90%;
+  width: 90%;
   padding: 0;
   margin: 0; }
 
 .slick__slide {
   padding: 0; }
+  .slick__slide:focus {
+    outline: 0; }
 
 .slick-prev,
 .slick-next {
@@ -1201,8 +1205,8 @@ body {
   right: -55px; }
 
 .result {
-  display: inline-block;
-  width: 430px;
+  width: 431px;
+  margin: 0 auto;
   background-color: #fff;
   border-collapse: collapse; }
   .result td, .result th {
@@ -1293,9 +1297,8 @@ body {
   font-size: 30px;
   line-height: 36px; }
 
-.feedback__phone span {
-  font-size: 30px;
-  color: #c6a239; }
+.feedback__phone .phone {
+  font-size: 30px; }
 
 .feedback__inner {
   display: -webkit-box;
@@ -1445,6 +1448,8 @@ body {
     margin-left: -20px;
     border-radius: 50%;
     background-color: rgba(188, 199, 58, 0.2); }
+  .contact__item .phone {
+    color: #000; }
 
 .contact__item--addres::after {
   margin-left: -15px;
@@ -1508,25 +1513,27 @@ body {
     background-color: #c6a239; }
   .arrow--left::before {
     top: 0;
-    -webkit-transform: translate(-17px, -5px) rotate(-45deg) scaleX(0.7);
-            transform: translate(-17px, -5px) rotate(-45deg) scaleX(0.7); }
+    left: 0;
+    -webkit-transform: translate(-5px, -5px) rotate(-45deg) scaleX(0.7);
+            transform: translate(-5px, -5px) rotate(-45deg) scaleX(0.7); }
   .arrow--left::after {
     bottom: 0;
-    -webkit-transform: translate(-17px, 5px) rotate(45deg) scaleX(0.7);
-            transform: translate(-17px, 5px) rotate(45deg) scaleX(0.7); }
+    left: 0;
+    -webkit-transform: translate(-5px, 5px) rotate(45deg) scaleX(0.7);
+            transform: translate(-5px, 5px) rotate(45deg) scaleX(0.7); }
 
 .arrow--right {
   background-color: #c6a239; }
   .arrow--right::after, .arrow--right::before {
+    top: 0;
+    right: 0;
     background-color: #c6a239; }
   .arrow--right::before {
-    top: 0;
-    -webkit-transform: translate(-5px, -5px) rotate(45deg) scaleX(0.7);
-            transform: translate(-5px, -5px) rotate(45deg) scaleX(0.7); }
+    -webkit-transform: translate(5px, -5px) rotate(45deg) scaleX(0.7);
+            transform: translate(5px, -5px) rotate(45deg) scaleX(0.7); }
   .arrow--right::after {
-    bottom: 0;
-    -webkit-transform: translate(-5px, 5px) rotate(-45deg) scaleX(0.7);
-            transform: translate(-5px, 5px) rotate(-45deg) scaleX(0.7); }
+    -webkit-transform: translate(5px, 5px) rotate(-45deg) scaleX(0.7);
+            transform: translate(5px, 5px) rotate(-45deg) scaleX(0.7); }
 
 .to-top {
   position: fixed;
@@ -1579,11 +1586,7 @@ body {
           align-items: center; }
 
 .copyright {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  display: inline-block; }
 
 .copyright,
 .author {
@@ -1717,10 +1720,9 @@ body {
   .features__head::after {
     display: none; }
   .features__header {
-    max-width: 100%;
     display: block;
     margin-bottom: 20px;
-    background-color: #fcf9f3; }
+    background-color: #fbfcf3; }
   .features__section {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1824,10 +1826,16 @@ body {
     font-size: 1.5rem; }
   .feedback__phone {
     font-size: 1.4rem; }
-    .feedback__phone span {
+    .feedback__phone .phone {
       font-size: 1.4rem; }
   .feedback__bid {
-    font-size: 1.4rem; } }
+    font-size: 1.4rem; }
+  .result {
+    max-width: 360px; } }
+
+@media (max-width: 440px) {
+  .result {
+    max-width: 280px; } }
 
 @media (max-width: 330px) {
   .input {
